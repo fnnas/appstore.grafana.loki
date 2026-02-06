@@ -1,0 +1,7 @@
+{
+  "defaults": {
+    "run-as": "grafana.loki"
+  },
+  "username": "grafana.loki",
+  "groupname": "grafana.loki"
+}
