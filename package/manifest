@@ -1,6 +1,6 @@
 version="this_pack_manifest_version"
 appname="grafana.loki"
-desc="Loki 是一个受 Prometheus 启发的、具有横向扩展性、高可用性及多租户特性的日志聚合系统。它旨在实现极高的成本效益和易用性<br>使用时请注意正确配置防火墙配置或添加校验避免非授权访问<br>持久化配置均在安装时选定的存储空间<br>/volX/@appshare/grafana.loki<br>详情可参考官方文档<br>该软件包由飞牛社区用户提供，由飞牛社区用户自行维护"
+desc="Loki 是一个受 Prometheus 启发的、具有横向扩展性、高可用性及多租户特性的日志聚合系统。它旨在实现极高的成本效益和易用性<br>使用时请注意正确配置防火墙配置或添加校验避免非授权访问造成损失<br>持久化配置均在安装时选定的存储空间<br>/volX/@appshare/grafana.loki<br>详情可参考官方文档<br>该软件包由飞牛社区用户提供，由飞牛社区用户自行维护"
 display_name="grafana.loki"
 maintainer="grafana"
 arch="this_pack_manifest_arch"

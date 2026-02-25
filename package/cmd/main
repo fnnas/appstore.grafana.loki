@@ -19,7 +19,7 @@ start)
 		echo "is already running"
 		exit 0
 	else
-	  [ -f ${PACKAGE_SHARE}/config.loki.template.yaml ] || cp ${PACKAGE_BASE}/app/config.loki.template.yaml ${PACKAGE_SHARE}/config.loki.yaml
+	  [ -f ${PACKAGE_SHARE}/config.loki.yaml ] || cp ${PACKAGE_BASE}/app/config.loki.template.yaml ${PACKAGE_SHARE}/config.loki.yaml
 		mkdir -m 777 -p ${LOG_DIR}
 
 		CPU_COUNT=$(nproc)
