@@ -7,7 +7,7 @@ PACKAGE_BASE=${TRIM_APPDEST}
 PACKAGE_SHARE="/var/apps/grafana.loki/shares/grafana.loki"
 EXEC_BIN="${PACKAGE_BASE}/app/loki-linux"
 EXEC_ARGS=" -config.file=${PACKAGE_SHARE}/config.loki.yaml"
-LOG_DIR="/tmp/grafana.log"
+LOG_DIR="${PACKAGE_SHARE}"
 LOG_FILE="${LOG_DIR}/grafana.loki.log"
 
 EXEC_CMDLINE="${EXEC_BIN} ${EXEC_ARGS}"
