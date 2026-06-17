@@ -1,2 +1,2 @@
 [manifest]
-desc="Loki は Prometheus に着想を得た、水平拡張性・高可用性・複数利用者対応のログ集約系です。極めて高い費用対効果と運用容易性を目的として設計されています<br>御使用の際は、防火壁設定を正しく構成するか、認証機構を追加し、未認可接続による損害を防止してください<br>永続化設定は、いずれも導入時に選定した保存領域に置かれます<br>/volX/@appshare/grafana.loki<br>詳細は公式文書を参照してください"
+desc="Lokiは、Prometheusに範を取りたる、横へ広げて用ゐ得る高可用・多利用者向けログ集約システムにて候。<br>Lokiは、メトリクスにあらずログを主眼とし、プル方式にあらずプッシュ方式にてログを収める点においてPrometheusと相違仕候。<br>詳細は公式文書を御覧下されたく候 <a href="https://grafana.com/ja/docs/loki/latest/get-started/overview/" target="_blank" rel="noopener noreferrer">https://grafana.com/ja/docs/loki/latest/get-started/overview/</a><br>御使用の節は、ファイアウォールの設定を正しく整へ、又は認証の仕組みを加へ、許可なき接続により損害を被る事なきやう御取計ひ下されたく候<br>永続化の設定は、いづれも導入の折に御選びの保存領域に置かれ候<br>/volX/@appshare/grafana.loki"
