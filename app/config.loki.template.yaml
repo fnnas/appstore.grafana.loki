@@ -6,24 +6,43 @@ auth_enabled: false
 server:
   http_listen_address: 0.0.0.0
   http_listen_port: 3100
+  log_level: info
 
 common:
+  path_prefix: /var/apps/grafana.loki/shares/grafana.loki
+
+  replication_factor: 1
+
   ring:
     instance_addr: 127.0.0.1
     kvstore:
       store: inmemory
-  replication_factor: 1
-  path_prefix: /var/apps/grafana.loki/shares/grafana.loki
+
+ingester:
+  wal:
+    enabled: true
+    disk_full_threshold: 0.99
+    dir: /var/apps/grafana.loki/shares/grafana.loki/wal
+
+  lifecycler:
+    join_after: 0s
+    min_ready_duration: 0s
+    final_sleep: 0s
+
+    ring:
+      kvstore:
+        store: inmemory
+      replication_factor: 1
 
 schema_config:
   configs:
-  - from: 2020-05-15
-    store: tsdb
-    object_store: filesystem
-    schema: v13
-    index:
-      prefix: index_
-      period: 24h
+    - from: 2020-05-15
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
 
 storage_config:
   filesystem:
