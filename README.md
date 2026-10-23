@@ -124,8 +124,8 @@ curl -G "http://<NAS_IP>:3100/loki/api/v1/query_range" \
 修改 `.github/workflows/main.yml` 中的版本号：
 ```yaml
 env:
-  target_version: "3.6.7"              # Loki版本
-  this_pack_manifest_version: "3.6.7-1" # 打包的安装包版本，后面那个-1主要是在主版本不变时有改动修改
+  target_version: "3.7.9"              # Loki版本
+  this_pack_manifest_version: "3.7.9-1" # 打包的安装包版本，后面那个-1主要是在主版本不变时有改动修改
 ```  
 就能打出新包了
 ## 相关链接
