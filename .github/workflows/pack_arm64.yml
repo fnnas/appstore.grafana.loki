@@ -31,7 +31,14 @@ jobs:
         run: |
           pwd
           ls -l
+      - name: 缓存官方压缩文件
+        id: cache_loki
+        uses: actions/cache@v4
+        with:
+          path: loki-linux-${{ env.target_pack_arch }}.zip
+          key: ${{ runner.os }}-loki-v1-${{ env.target_version }}-${{ env.target_pack_arch }}
       - name: 下载压缩文件
+        if: steps.cache_loki.outputs.cache-hit != 'true'
         run: |
           wget https://github.com/grafana/loki/releases/download/v${{ env.target_version }}/loki-linux-${{ env.target_pack_arch }}.zip
       - name: 解压压缩文件

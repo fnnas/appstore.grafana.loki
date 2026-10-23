@@ -119,6 +119,12 @@ curl -G "http://<NAS_IP>:3100/loki/api/v1/query_range" \
 3. 点击 "Run workflow"
 4. 选择是否创建 Release，如果创建了release就会在release出现
 
+### 下载缓存
+
+两个架构的工作流通过 `actions/cache@v4` 缓存官方 Loki ZIP 文件，缓存键包含运行系统、Loki 上游版本和架构。首次构建或缓存未命中时从官方下载，构建成功后保存缓存；命中缓存时跳过下载，直接解压打包。
+
+仅修改应用包修订号会复用同一上游版本的缓存。更新 Loki 版本或切换架构时使用独立缓存；如需强制重新下载，可在 GitHub Actions 的 Caches 页面删除对应缓存。
+
 ### 版本更新
 一般来说启动脚本或者是打包流程没变的话  
 修改 `.github/workflows/main.yml` 中的版本号：
