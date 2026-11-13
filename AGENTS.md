@@ -25,16 +25,18 @@ This repository packages upstream Grafana Loki binaries as fnOS application arch
 
 - The outer archive is `appstore.grafana.loki.<package-version>.<architecture>.tgz` containing `package/`. Its `package/app.tgz` contains `app/` and `ui/`; `app/loki-linux` must be executable. Keep downloaded binaries and generated archives out of commits.
 - Runtime hooks use `TRIM_APPDEST` for the installed application and `/var/apps/grafana.loki/shares/grafana.loki/` for persistent configuration and data. The default HTTP port is `3100`. The configuration template is copied only when the user's configuration is absent; preserve existing configuration during upgrades.
-- When changing application descriptions, update the relevant entries in `package/i18n/zh-CN`, `en`, and `ja-JP`, preserving their existing format and language style.
+- Keep application descriptions synchronized across all supported locales in `package/i18n/`: `zh-CN`, `en`, `ja-JP`, `zh-TW`, `de-DE`, `fr-FR`, `es-ES`, `ko-KR`, `ru-RU`, and `it-IT`. Preserve the `[manifest]` section, `desc` key, HTML formatting, documentation links, storage paths, and each locale's language style.
 
 ## Validation
 
 - Run `git diff --check`. For workflow edits, run `actionlint` when available and distinguish existing findings from new ones.
+- When only synchronizing the official upstream version, verify the latest stable release and both architecture assets, update the workflow versions and README, and run static checks. Skip local builds, release binary downloads, and executable checks for these version-only updates.
 - For Bash edits, run `bash -n <changed-script>` under Linux or WSL. Execute lifecycle hooks only in an appropriate fnOS test environment.
-- For packaging changes, reproduce both architecture workflows in a temporary copy under Linux/WSL: their `sed -i` commands modify the manifest in place. Check both archive layers with `tar -tzf`, rendered manifest values, and executable permissions.
-- For version updates, verify downloads against the release's `SHA256SUMS`. For version or configuration changes, run the matching binary with `-config.file=app/config.loki.template.yaml -verify-config=true` on a compatible architecture.
+- For packaging logic changes, reproduce both architecture workflows in a temporary copy under Linux/WSL: their `sed -i` commands modify the manifest in place. Check both archive layers with `tar -tzf`, rendered manifest values, and executable permissions.
+- When downloading release binaries for build validation, verify them against the release's `SHA256SUMS`. For configuration changes, run the matching binary with `-config.file=app/config.loki.template.yaml -verify-config=true` on a compatible architecture.
 - A CI validation build uses **Test Release** with `make_release: false`; setting it to `true` creates a GitHub prerelease and uploads assets.
 - Documentation-only changes need a content review and whitespace check.
+- For localization changes, check UTF-8 encoding, matching sections and keys across locales, and HTML links and storage paths. Local builds are unnecessary when only translation files change.
 
 ## Commit messages
 

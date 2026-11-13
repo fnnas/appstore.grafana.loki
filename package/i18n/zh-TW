@@ -1,0 +1,2 @@
+[manifest]
+desc="Loki 是一套受 Prometheus 啟發，具備水平擴充、高可用性及多租戶特性的日誌彙整系統。<br>它以成本效益及操作簡便為設計目標。<br>它不會為日誌內容建立索引，而是為每個日誌串流的標籤集合建立索引。<br>詳細資訊請參閱官方文件 <a href="https://grafana.com/docs/loki/latest/get-started/overview/" target="_blank" rel="noopener noreferrer">https://grafana.com/docs/loki/latest/get-started/overview/</a><br>使用時請正確設定防火牆規則或啟用身分驗證，避免未經授權的存取造成損失。<br>持久化設定會儲存在安裝時選取的儲存空間<br>/volX/@appshare/grafana.loki<br>此套件由社群使用者提供及維護。"

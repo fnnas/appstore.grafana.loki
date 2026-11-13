@@ -1,0 +1,2 @@
+[manifest]
+desc="Loki는 Prometheus에서 着想을 얻은 作業記錄 收集體系로서, 水平擴張과 높은 利用性을 갖추고 여러 使用者集團의 資料를 서로 分離하여 管理합니다.<br>적은 費用으로 쉽게 運營할수 있도록 設計되였습니다.<br>作業記錄의 內容을 索引에 넣지 않고 每個 作業記錄흐름에 붙은 標識들의 모임에 對하여 索引을 만듭니다.<br>詳細한 內容은 公式 說明文書를 參考하십시오 <a href="https://grafana.com/docs/loki/latest/get-started/overview/" target="_blank" rel="noopener noreferrer">https://grafana.com/docs/loki/latest/get-started/overview/</a><br>許可없는 接近으로 생기는 被害를 막으려면 防火壁規則을 바로 設定하거나 使用者認證을 適用하십시오.<br>構成화일은 設置할 때 選擇한 保管空間에 保存됩니다<br>/volX/@appshare/grafana.loki<br>이 묶음쏘프트웨어는 使用者共同體의 成員들이 提供하고 維持管理합니다."
